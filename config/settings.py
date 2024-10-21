@@ -164,8 +164,3 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_LOGOUT_ON_GET = True
-
-# custom signup form
-ACCOUNT_FORMS = {
-    'signup': 'accounts.forms.CustomSignupForm',
-}
