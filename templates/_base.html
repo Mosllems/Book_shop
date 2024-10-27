@@ -41,12 +41,9 @@
             <div id="search-btn" class="fas fa-search"></div>
             {% if user.is_authenticated %}
                 <h2 class="fas fa"> Welcome {{ user.username }} <span></span> <a class="text-center btn" style="font-size: 1.5rem; color: inherit; text-decoration: none;" href="{% url 'account_logout' %}" onmouseover="this.style.color=this.style.color;" onmouseout="this.style.color=this.style.color;">Log out</a>
-
-
                 </h2>
             {% else %}
                 <a class="text-center btn" style="font-size: 1.5rem; color: inherit; text-decoration: none;" href="{% url 'account_login' %}" onmouseover="this.style.color=this.style.color;" onmouseout="this.style.color=this.style.color;">Log in</a>
-
             {% endif %}
             <div id="login-btn" class="fas fa-user" style="display: none"></div>
         </div>

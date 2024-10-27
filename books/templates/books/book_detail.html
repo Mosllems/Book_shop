@@ -1,0 +1,23 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "css/detailviewstyle.css" %}">
+{% endblock style %}
+{% block content %}
+
+    <div class="book-detail-container">
+        <img src="{{ books.image.url }}" alt="Cover of {{ book.title }}" class="book-cover">
+        <div class="book-info">
+            <h1 class="book-title">{{ books.title }}</h1>
+            <h2 class="book-author">نویسنده: {{ books.author }}</h2>
+            <h2 class="book-category">دسته بندی: {{ books.category }}</h2>
+            <h2 class="book-price">قیمت: {{ books.price }} تومان</h2>
+            <p class="book-description">توضیحات: {{ books.description }}</p>
+        </div>
+    </div>
+
+
+
+{% endblock content %}
+

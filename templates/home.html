@@ -147,7 +147,8 @@
 
     <section class="newsletter">
 
-        <form action="">
+        <form method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
             <h3>برای آخرین به روز رسانی مشترک شوید</h3>
             <input type="email" name="" placeholder="ایمیل خود را وارد کنید" id="" class="box">
             <input type="submit" value="عضویت" class="btn">

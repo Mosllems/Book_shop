@@ -12,6 +12,13 @@ def home(request):
     })
 
 
+def category(request,):
+    categories = Category.objects.all()
+    return render(request, "_base.html", {
+        "categories": categories,
+    })
+
+
 def category_book(request, pk):
     categories = Category.objects.all()
     category = get_object_or_404(Category, pk=pk)
