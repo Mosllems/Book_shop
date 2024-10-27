@@ -1,0 +1,123 @@
+@font-face {
+    font-family: "Vazir";
+    src: url(../fonts/Vazir-Regular.ttf);
+}
+
+:root {
+    --green: #27ae60;
+    --dark-color: #219150;
+    --black: #444;
+    --light-color: #666;
+    --border: .1rem solid rgba(0, 0, 0, .1);
+    --border-hover: .1rem solid var(--black);
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+* {
+    font-family: "Vazir";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+body {
+    background-color: #ffff;
+}
+
+.container {
+    padding: 3rem;
+}
+
+h1, h2, h3 {
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+h5 {
+    color: var(--light-color);
+    margin: 0.5rem 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.book-detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    background-color: white;
+}
+
+.book-detail .content {
+    max-width: 60%;
+    text-align: right;
+}
+
+.book-detail .price {
+    font-size: 2rem;
+    color: var(--green);
+    font-weight: bold;
+}
+
+.book-detail .description {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    color: var(--light-color);
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--green);
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.btn:hover {
+    background: var(--dark-color);
+}
+
+.card {
+    background-color: white;
+    border: var(--border);
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.card h3 {
+    margin-bottom: 1.5rem;
+}
+
+.card input, .card textarea {
+    width: 100%;
+    padding: 1rem;
+    border: var(--border);
+    margin-bottom: 1rem;
+}
+
+.card input[type="submit"] {
+    background: var(--green);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.card input[type="submit"]:hover {
+    background: var(--dark-color);
+}

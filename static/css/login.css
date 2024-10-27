@@ -1,0 +1,69 @@
+/* static/css/style.css */
+body {
+    font-family: 'Vazir';
+    background-color: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 1rem; /* کاهش padding کلی */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    width: 380px; /* کاهش عرض فرم */
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 0.4rem;
+    color: #27ae60;
+    font-size: 1.6rem; /* کوچک‌تر کردن فونت عنوان */
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container input {
+    padding: 0.5rem; /* کاهش padding فیلدهای ورودی */
+    margin-bottom: 0.4rem; /* کاهش فاصله بین فیلدها */
+    font-size: 0.95rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.login-btn {
+    background-color: #27ae60;
+    color: white;
+    padding: 0.5rem; /* کاهش padding دکمه */
+    font-size: 0.95rem; /* کاهش اندازه فونت دکمه */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.4rem; /* کاهش فاصله بالای دکمه */
+}
+
+.login-btn:hover {
+    background-color: #219653;
+}
+
+.login-container a {
+    color: #27ae60;
+    text-decoration: none;
+    font-size: 0.85rem; /* کوچک‌تر کردن اندازه فونت لینک‌ها */
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+.login-container p {
+    margin-top: 0.4rem; /* کاهش فاصله بالای پاراگراف */
+    font-size: 0.85rem; /* کوچک‌تر کردن اندازه فونت پاراگراف‌ها */
+}
