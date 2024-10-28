@@ -54,7 +54,7 @@
         <nav class="navbar">
             <a href="{% url 'home' %}">خانه</a>
             <div class="dropdown">
-                <a href="#products" class="dropdown-toggle">محصولات</a>
+                <a href="{% url 'books' %}" class="dropdown-toggle">محصولات</a>
                 <div class="dropdown-menu">
                     {% for category in categories %}
                         <a href="{% url 'category_book' category.id %}">{{ category.name }}</a>
@@ -102,7 +102,7 @@
         <div class="box">
             <h3>quick links</h3>
             <a href="{% url 'home' %}"> <i class="fas fa-arrow-right"></i> خانه </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> محصولات </a>
+            <a href="{% url 'books' %}"> <i class="fas fa-arrow-right"></i> محصولات </a>
             <a href="#featured"> <i class="fas fa-arrow-right"></i> جدید ها </a>
             <a href="#blogs"> <i class="fas fa-arrow-right"></i> وبلاگ </a>
         </div>
