@@ -10,7 +10,7 @@ class Category(models.Model):
 
 
 class Book(models.Model):
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=False, blank=False)
     title = models.CharField(max_length=100)
     description = models.TextField()
     author = models.CharField(max_length=100)

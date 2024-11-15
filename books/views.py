@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.urls import reverse_lazy
 from django.core.paginator import Paginator
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 from .models import Book, Category
 
@@ -48,4 +50,16 @@ def book_detail(request, pk):
     return render(request, "books/book_detail.html", {
         "books": books,
     })
+
+
+class BookCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Book
+    fields = ["title", "description", "author", "price", "category", "image"]
+    template_name = "books/book_create.html"
+    success_url = reverse_lazy("books")
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
 

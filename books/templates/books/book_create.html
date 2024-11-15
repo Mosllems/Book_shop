@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اضافه کردن کتاب</title>
+    <link rel="stylesheet" href="{% static "css/bookcreate.css" %}">
+</head>
+<body>
+
+<div class="container">
+    <h2 class="form-title">اضافه کردن کتاب جدید</h2>
+    <form action="#" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="submit-btn">اضافه کردن کتاب</button>
+    </form>
+</div>
+
+</body>
+</html>
