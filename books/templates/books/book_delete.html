@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Delete</title>
+</head>
+<body>
+
+<form method="post">
+    {% csrf_token %}
+    <h1>Are you sure?</h1>
+    <p>Are you sure you want to delete {{ book.title }}?</p>
+    <input type="submit" class="btn btn-danger" value="Delete">
+</form>
+
+</body>
+</html>

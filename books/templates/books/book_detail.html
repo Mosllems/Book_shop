@@ -11,6 +11,11 @@
         <div class="book-info">
             <h1 class="book-title">{{ books.title }}</h1>
             <h2 class="book-author">نویسنده: {{ books.author }}</h2>
+            {% if books.user == user %}
+                <a href="{% url 'book_update' books.id %}">ویرایش</a>
+                <span>|</span>
+                <a href="{% url 'book_delete' books.id %}">حذف</a>
+            {% endif %}
             <h2 class="book-category">دسته بندی: {{ books.category }}</h2>
             <h2 class="book-price">قیمت: {{ books.price }} تومان</h2>
             <p class="book-description">توضیحات: {{ books.description }}</p>

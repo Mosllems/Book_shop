@@ -68,9 +68,14 @@ class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView
     model = Book
     fields = ["title", "author", "description", "price", "image"]
     template_name = "books/book_update.html"
-    success_url = reverse_lazy("book_detail")
+    success_url = reverse_lazy("books")
 
     def test_func(self):
         obj = self.get_object()
         return obj.user == self.request.user
 
+
+class BookDeleteView(generic.DeleteView):
+    model = Book
+    template_name = "books/book_delete.html"
+    success_url = reverse_lazy("books")
