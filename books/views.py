@@ -16,12 +16,13 @@ def home(request):
     })
 
 
-class BookListView(generic.ListView):
-    model = Book
-    paginate_by = 4
-    ordering = ["-datetime_created"]
-    template_name = "books/book_list.html"
-    context_object_name = "books"
+def book_search(request):
+    if request.method == "POST":
+        searched = request.POST["searched"]
+        books = Book.objects.filter(title__icontains=searched)  # i+contains baraie inke case-sensitive nabashad dargheir in sorat i ra mitavanim pak konim
+        return render(request, "books/book_search.html", {"searched": searched, "books": books})
+    else:
+        return render(request, "books/book_search.html")
 
 
 def category(request,):
@@ -51,6 +52,14 @@ def book_detail(request, pk):
     return render(request, "books/book_detail.html", {
         "books": books,
     })
+
+
+class BookListView(generic.ListView):
+    model = Book
+    paginate_by = 4
+    ordering = ["-datetime_created"]
+    template_name = "books/book_list.html"
+    context_object_name = "books"
 
 
 class BookCreateView(LoginRequiredMixin, generic.CreateView):

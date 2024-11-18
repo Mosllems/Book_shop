@@ -32,9 +32,10 @@
 
         <a href="#" class="logo"> <i class="fas fa-book"></i> کتابخانه </a>
 
-        <form action="" class="search-form">
-            <input type="search" name="" placeholder="جستجو کنید" id="search-box">
-            <label for="search-box" class="fas fa-search"></label>
+        <form action="{% url 'search' %}" method="POST" class="search-form">
+            {% csrf_token %}
+            <input type="search" name="searched" placeholder="جستجو کنید" id="search-box">
+            <button class="btn btn-outline-success " type="submit" mar>Search</button>
         </form>
 
         <div class="icons">

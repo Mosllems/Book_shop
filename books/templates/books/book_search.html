@@ -1,0 +1,37 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/booklist.css' %}">
+{% endblock %}
+
+{% block content %}
+    {% if searched %}
+        <h1 align="center">You searched for: {{ searched }}</h1>
+        <div class="bookshelf">
+            {% for book in books %}
+                <div class="book-card">
+                    <div class="book-image">
+                        <img src="{{ book.image.url }}" alt="{{ book.title }}">
+                    </div>
+                    <div class="book-info">
+                        <a class="text-decoration-none" href={% url 'book_detail' book.id %}><h3
+                                class="card-title"><strong>{{ book.title|capfirst }}</strong></h3></a>
+                        <p>{{ book.description|truncatewords:20 }}</p>
+                        <p class="author">نویسنده: {{ book.author }}</p>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:2 %}
+                    <!-- خط افقی برای جداسازی ردیف‌ها بعد از هر دو کتاب -->
+                    <div class="row-separator"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    {% else %}
+        <h1>Hey! you forgot to search any book!</h1>
+
+    {% endif %}
+
+
+{% endblock content %}
+
